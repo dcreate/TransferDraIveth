@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-image: url(img/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  padding: 20px;
+}
+
+/* TARJETA PRINCIPAL */
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.15);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+/* SELECTOR */
+.selector-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.selector-container label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: #444343;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: .3s;
+}
+
+select:focus {
+  border-color: #222;
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,.08);
+}
+
+
+/* DATOS */
+
+.dato {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.etiqueta {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: #6e6262;
+  font-weight: bold;
+}
+
+.valor {
+  padding: 16px 12px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  word-break: break-word;
+  text-align: center;
+}
+
+
+/* BOTONES */
+
+.boton {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #222;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform .15s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+.boton:hover {
+  background: #a79d9d;
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.20);
+}
+
+.boton:active {
+  transform: scale(.94);
+}
+
+
+/* EFECTO ONDA */
+
+.boton::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  background: rgba(255,255,255,.45);
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+  opacity: 0;
+}
+
+.boton.animando::after {
+  animation: onda .6s ease-out;
+}
+
+@keyframes onda {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+    opacity: .7;
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(35);
+    opacity: 0;
+  }
+
+}
+
+
+/* ESTADO COPIADO */
+
+.boton.copiado {
+  background: #210c99;
+  animation: copiado .5s ease;
+}
+
+@keyframes copiado {
+
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.08);
+  }
+
+  65% {
+    transform: scale(.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* MENSAJE */
+
+#mensaje {
+  margin-top: 15px;
+  min-height: 20px;
+  color: #e20a0a;
+  font-weight: bold;
+}
+
+
+/* QR */
+
+.qr {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.qr h3 {
+  margin-bottom: 15px;
+}
+
+.qr img {
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+
+/* AVISO */
+
+.aviso {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0a0253;
+  line-height: 1.5;
+}

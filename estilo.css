@@ -169,7 +169,7 @@ select:focus {
 /* ESTADO COPIADO */
 
 .boton.copiado {
-  background: #210c99;
+  background: #b8256e;
   animation: copiado .5s ease;
 }
 

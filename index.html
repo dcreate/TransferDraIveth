@@ -14,6 +14,136 @@
     <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
+    <div class="card">
+        <h1>💳 Datos de pago</h1>
+
+        <!-- SELECTOR DE BANCO -->
+
+        <div class="selector-container">
+            <label for="selectorTarjeta">
+            SELECCIONA EL BANCO
+            </label>
+            <select
+            id="selectorTarjeta"
+            onchange="cambiarTarjeta()">
+
+                <option value="tarjeta1">
+                    BBVA BANCOMER
+                </option>
+
+                <option value="tarjeta2">
+                    SANTANDER
+                </option>
+            </select>
+
+         </div>
+
+
+         <!-- BANCO -->
+
+         <div class="dato">
+
+            <span class="etiqueta">
+            BANCO
+            </span>
+
+            <div
+            class="valor"
+            id="banco">
+
+            Banco 1
+
+            </div>
+
+        </div>
+
+        <!-- TITULAR -->
+
+        <div class="dato">
+
+            <span class="etiqueta">
+            TITULAR
+            </span>
+
+            <div
+            class="valor"
+            id="titular">
+
+            NOMBRE DEL TITULAR
+
+            </div>
+
+
+            <button
+            class="boton"
+            id="botonTitular"
+            onclick="copiarDato('titular','botonTitular')">
+
+            📋 Copiar nombre
+
+            </button>
+
+         </div>
+
+
+        <!-- TARJETA -->
+
+         <div class="dato">
+
+            <span class="etiqueta">
+            NÚMERO DE TARJETA
+            </span>
+
+            <div
+            class="valor"
+            id="numero">
+
+            0000 0000 0000 0000
+
+            </div>
+
+
+            <button
+            class="boton"
+            id="botonTarjeta"
+            onclick="copiarDato('numero','botonTarjeta')">
+
+            📋 Copiar número
+
+            </button>
+
+         </div>
+
+
+        <div id="mensaje"></div>
+
+
+        <!-- QR -->
+
+        <div class="qr">
+
+            <h3>
+            📱 Escanea el código QR
+            </h3>
+
+            <img
+            id="qrImagen"
+            alt="Código QR">
+
+         </div>
+
+
+        <div class="aviso">
+
+            Mantén esta información privada y
+            compártela únicamente con personas
+            de confianza.
+
+        </div>
+
+
+    </div>
+    <script src="generador.js"></script>
     
 </body>
 </html>
